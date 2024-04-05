@@ -1,0 +1,9 @@
+<h1>Dashboards#show</h1>
+<p>Find me in app/views/dashboards/show.html.erb</p>
+<!-- Place a logout button anywhere on your application -->
+ <%= link_to 'Logout', '/auth/logout', data: { turbo: false } %>
+
+
+<div>
+  <p>Normalized User Profile:<%= JSON.pretty_generate(@user)%></p>
+</div>

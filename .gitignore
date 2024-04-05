@@ -1,0 +1,34 @@
+#ignore these files
+
+#root .env file
+.env
+
+#auth0.yml file
+config/auth0.yml
+
+/log/*
+/tmp
+!/log/.keep
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/node_modules
+/yarn-error.log
+/public/assets
+/public/packs
+/public/packs-test
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/.byebug_history
+/config/master.key
+.env
+.env.*
+.idea/
+.vscode/
+*.swp
+*~
+.project
+.DS_Store
+Thumbs.db
+/spec/tmp/*
+/public/uploads
