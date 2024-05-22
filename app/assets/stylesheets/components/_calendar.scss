@@ -1,0 +1,91 @@
+.calendar {
+  ul {
+    display: flex;
+  }
+  &__control-container {
+    transition: 0.3s;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: center;
+    background-color: $fridae-l-grey;
+    border-radius: 8px;
+    &[aria-selected="true"] {
+      background-color: $fridae-red;
+      color: white;
+  }
+}
+}
+.tab  {
+  text-align: center;
+  // &[aria-selected="true"] {
+  // }
+}
+
+/* styles.css */
+
+.grid{
+  &__container{
+    display: flex;
+    position: relative;
+    height: 100%;
+    border-radius: 4px;
+    &__rows{
+      display: grid;
+      grid-template-rows: repeat($hour-divisions, 1fr);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+
+    }
+    &__columns{
+      display: inherit;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+
+    }
+  }
+
+  &__column {
+    display: block;
+    flex-grow: 1;
+    flex-basis: 0;
+    // grid-template-columns: repeat(7, 1fr);
+    // position: absolute;
+    height: 100%;
+    border-left: 1px solid $fridae-l-grey;
+    &:last-child {  // Corrected line
+      border-right: 1px solid $fridae-l-grey;
+    }
+  }
+  &__row {
+    display: block;
+
+    &:nth-child(4n + 1) {
+      border-top: 1px solid lightgrey;
+    }
+    &:last-child {  // Corrected line
+      border-bottom: 1px solid $fridae-l-grey;
+    }
+  }
+   /* 96 rows */
+}
+
+.grid-item {
+  border-left: 1px solid lightgrey; /* Light grey border on the left side of each column */
+}
+
+.grid-container > :nth-child(7n + 1) {
+  border-left: none; /* Remove the left border of the first column cells */
+}
+
+/* Add a light grey border to the top of every second row */
+.grid-container > :nth-child(14n + 1) {
+  border-top: 1px solid lightgrey;
+}
+
+/* Optional: Add a border to the top of the first row if needed */
+.grid-container > :nth-child(-n + 7) {
+  border-top: 1px solid lightgrey;
+}

@@ -1,0 +1,20 @@
+// colors
+$fridae-red: #E5383B;
+$fridae-d-red: #A4161A;
+$fridaew: #DDCFB4;
+$fridae-l-grey: #CFCFCF;
+$white: #F5F5F5;
+$black: #0B090A;
+$background-color: #FDFCFE;
+$text-color: #2c3e50;
+
+// units
+$spacer: 4px;
+$hours: 24;
+$hour-divisions: ($hours * 4);
+
+:root {
+  --hours: #{$hours};
+  --hour-divisions: #{$hour-divisions};
+  --spacer: #{$spacer};
+}

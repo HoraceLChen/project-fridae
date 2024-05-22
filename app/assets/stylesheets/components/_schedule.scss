@@ -1,0 +1,47 @@
+.schedule-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.schedule-time-bar {
+  height: 100%;
+}
+
+.time-div {
+  border-style: solid;
+  border-color: $fridae-red;
+}
+
+.vertical-clock {
+  display: flex;
+  flex-direction: column;
+  height: 1200px; /* Adjust height as needed */
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.hour {
+  flex: 1;
+  border-top: 1px solid #ddd; /* Separation line between hours */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.hour:first-child {
+  border-top: none;
+}
+
+.schedule-box {
+  position: relative;
+  border: 1px solid black;
+}
+.needle {
+  position: absolute;
+  width: 100%;
+  border-top: 2px solid red;
+  transition: top 0.5s linear; /* Smooth transition for the needle */
+  box-shadow: 0 0 8px red;
+}

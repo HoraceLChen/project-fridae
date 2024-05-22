@@ -1,0 +1,53 @@
+// To change variables: all available within variables.scss file
+@import "../stylesheets/config/variables";
+@import "../stylesheets/config/mixins";
+
+
+@include generate-margin-classes(0, 10);
+@include generate-padding-classes(0, 10);
+@include generate-opacity-classes(0, 100, 10);
+
+body {
+  height: calc(100vh - 2rem);
+  // width: 100vw;
+}
+
+.primary-button {
+  transition: 0.2s ease-in;
+  width: 128px;
+  border-radius: 8px;
+  border-style: none;
+  border-color: white;
+  background-color: $fridae-red;
+  color: white;
+  height: 32px;
+}
+
+.primary-button:hover {
+  background-color: $fridae-d-red;
+}
+
+.text {
+  // '&' allows me to tack on variations to a class and do stuff like this
+  &-s{
+    font-size: small;
+  }
+  &-m{
+    font-size: medium;
+  }
+  &-l{
+    font-size: large;
+  }
+  &-xl{
+    font-size: x-large;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-lowercase {
+    text-transform: lowercase;
+  }
+  &-white{
+    color: white;
+  }
+}
