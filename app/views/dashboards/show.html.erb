@@ -1,9 +1,30 @@
-<h1>Dashboards#show</h1>
-<p>Find me in app/views/dashboards/show.html.erb</p>
-<!-- Place a logout button anywhere on your application -->
- <%= link_to 'Logout', '/auth/logout', data: { turbo: false } %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheets" href="navbar.scss">
+    <script src="/javascript/navbar.js"></script>
+    <script src='app/javascript/schedule.js'></script>
+  </head>
+</html>
 
+  <%= render "partials/navbar"  %>
 
-<div>
-  <p>Normalized User Profile:<%= JSON.pretty_generate(@user)%></p>
+<div class="dashboard">
+    <div class="ai-helper cell">
+      <div class="ai-face">
+        <img src="https://media4.giphy.com/media/UWKiMk1JYDLTOA1YK8/giphy.gif?cid=6c09b952idk23bfztvrqnf73egf4q6olac68imnp7s0fxd9m&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" width="100%" height="100%" alt="AI Face">
+      </div>
+      <div class="ai-chatbox window">
+        <p style="color: red;">F.R.I.D.A.E</p>
+      </div>
+    </div>
+  <div class="schedule cell">
+  <p>SCHEDULE</p>
+  <%= render "partials/calendar" %>
+  </div>
+  <div class="helper cell">
+   <p>Normalized User Profile:</p>
+   <button class="primary-button">Send</button>
+  </div>
 </div>

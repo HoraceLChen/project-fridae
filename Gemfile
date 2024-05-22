@@ -26,11 +26,22 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# DO NOT USE SASSC-RAILS ANYMORE, ITS BEEN UNMAINTAINED SINCE 2019 ITS FUCKED
+gem 'sassc-rails'
+
+# gem 'sass-rails'
+
+# USE DARTSASS INSTEAD OF SASSC-RAILS
+gem 'dartsass-rails', '~> 0.5.0'
+
 gem 'omniauth-auth0', '~> 3.0'
 
 gem 'omniauth-rails_csrf_protection', '~> 1.0' # prevents forged authentication requests
 
 gem 'dotenv-rails'
+
+gem "bootstrap", "~> 5.2"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -73,3 +84,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "dartsass-rails", "~> 0.5.0"

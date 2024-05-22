@@ -9,6 +9,11 @@ Bundler.require(*Rails.groups)
 module F4
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.generators do |generate|
+      generate.assets false
+      generate.helper false
+      generate.test_framework :test_unit, fixture: false
+    end
     config.load_defaults 7.1
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do

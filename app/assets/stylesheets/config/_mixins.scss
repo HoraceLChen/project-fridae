@@ -1,0 +1,76 @@
+/*
+@mixin in SCSS acts similar to def in ruby. you define a reusable bit of code
+you invoke it bu using @include
+
+I've seperated mixins from the main standard styles file to make things cleaner, invoke any of these
+'methods' inside of any file that has @import '.../mixins'
+*/
+
+// Generate opacity classes from 0 to 100 in steps of 10
+// here we define generate-opacity-classes and it takes 3 variables
+@mixin generate-opacity-classes($min, $max, $step) {
+  // create a loop, for i from min to max/number of steps
+  @for $i from $min through ($max / $step) {
+    // create opacity class, .opacity-0 = opacity: 0, .opacity-10 = opacity: 10 etc.
+    .opacity-#{$i * $step} {
+      opacity: ($i * $step) / 100;
+    }
+  }
+}
+
+// loop 10 times and generate margin classes
+@mixin generate-margin-classes($min, $max) {
+  @for $i from $min through $max {
+    .m-#{$i} {
+      margin: ($i * $spacer);
+    }
+    .ml-#{$i} {
+      margin-left: ($i * $spacer);
+    }
+    .mr-#{$i} {
+      margin-right: ($i * $spacer);
+    }
+    .mt-#{$i} {
+      margin-top: ($i * $spacer);
+    }
+    .mb-#{$i} {
+      margin-bottom: ($i * $spacer);
+    }
+    .mx-#{$i} {
+      margin-left: ($i * $spacer);
+      margin-right: ($i * $spacer);
+    }
+    .my-#{$i} {
+      margin-top: ($i * $spacer);
+      margin-bottom: ($i * $spacer);
+    }
+  }
+}
+
+@mixin generate-padding-classes($min, $max) {
+  @for $i from $min through $max {
+    .p-#{$i} {
+      padding: ($i * $spacer);
+    }
+    .pl-#{$i} {
+      padding-left: ($i * $spacer);
+    }
+    .pr-#{$i} {
+      padding-right: ($i * $spacer);
+    }
+    .pt-#{$i} {
+      padding-top: ($i * $spacer);
+    }
+    .pb-#{$i} {
+      padding-bottom: ($i * $spacer);
+    }
+    .px-#{$i} {
+      padding-left: ($i * $spacer);
+      padding-right: ($i * $spacer);
+    }
+    .py-#{$i} {
+      padding-top: ($i * $spacer);
+      padding-bottom: ($i * $spacer);
+    }
+  }
+}

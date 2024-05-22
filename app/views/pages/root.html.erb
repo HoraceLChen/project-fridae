@@ -3,3 +3,5 @@
 
   <%= button_to 'Login', '/auth/auth0', method: :post, data: { turbo: false } %>
   <%= link_to 'Logout', '/auth/logout', data: { turbo: false } %>
+
+<%= render "partials/calendar" %>
