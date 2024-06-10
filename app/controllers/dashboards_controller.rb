@@ -22,16 +22,18 @@ class DashboardsController < ApplicationController
   end
 
   def gpt_post
-    @message = params[:message]
-    client = OpenAI::Client.new
-    gpt_response = client.chat(parameters: {
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: params[:message] }]
-    })
+      client = OpenAI::Client.new
+      gpt_response = client.chat(parameters: {
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: params[:message] }]
+      })
 
-    response_text = gpt_response['choices'][0]['message']['content']
+      @response = gpt_response['choices'][0]['message']['content']
 
-    render json: { response: response_text }
+      respond_to do |format|
+        format.json { render json: { response: @response } }
+      end
+    end
     # # api_key = ENV['OPENAI_API_KEY']
 
 
@@ -49,7 +51,7 @@ class DashboardsController < ApplicationController
     # # respond_to do |format|
     # #   format.json { render json: { response: @response } }
     # # end
-  end
+
 
   private
 
@@ -60,10 +62,6 @@ class DashboardsController < ApplicationController
       messages: [{ role: "user", content: message }]
     })
     @response = chaptgpt_response
-  end
-
-  def ask_openai()
-
   end
 
 end
