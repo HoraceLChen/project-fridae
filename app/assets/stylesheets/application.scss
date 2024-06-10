@@ -1,9 +1,34 @@
+@import "font-awesome";
 @import "../stylesheets/config/standard-styles";
 
 @import "../stylesheets/components/dashboard";
 @import "../stylesheets/components/schedule";
 @import "../stylesheets/components/calendar";
 @import "../stylesheets/components/navbar";
+@import "../stylesheets/components/ai-helper";
+@import "../stylesheets/components/ai-chat";
+
+.background{
+  // content:""; /* required for ::before */
+    // position:fixed; /* don't scroll with page */
+z-index:-100; /* place behind elements on page */
+// width:100%;
+// height:100%;
+background-color:$fridae-red;
+background-image:
+radial-gradient(circle farthest-side at top right, transparent, #ff4c24), radial-gradient(ellipse farthest-corner at 0% 100%, transparent, $fridae-red);
+animation:bg-change 15s infinite;
+
+}
+
+@keyframes bg-change {
+0%, 100% {
+  filter:hue-rotate(0deg);
+}
+50% {
+  filter:hue-rotate(10deg);
+}
+}
 
 /*
 * This is a manifest file that'll be compiled into application.css, which will include all the files

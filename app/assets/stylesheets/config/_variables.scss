@@ -1,7 +1,8 @@
 // colors
 $fridae-red: #E5383B;
 $fridae-d-red: #A4161A;
-$fridaew: #DDCFB4;
+$fridae-off-white: #DDCFB4;
+$fridae-white: #FDFCFE;
 $fridae-l-grey: #CFCFCF;
 $white: #F5F5F5;
 $black: #0B090A;
@@ -12,6 +13,16 @@ $text-color: #2c3e50;
 $spacer: 4px;
 $hours: 24;
 $hour-divisions: ($hours * 4);
+
+// breakpoints
+$breakpoints: (
+  phone-sm: 420px,
+  phone: 767px,
+  tablet: 768px,
+  tablet-lg: 1024px,
+  desktop: 1025px,
+  desktop-lg: 1600px
+);
 
 :root {
   --hours: #{$hours};

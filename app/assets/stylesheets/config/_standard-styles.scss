@@ -21,9 +21,48 @@ body {
   background-color: $fridae-red;
   color: white;
   height: 32px;
+  &__send {
+    position: absolute;
+    transition: 0.2s ease-out;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border-style: none;
+    border-color: white;
+    background-color: $fridae-red;
+    color: white;
+    height: 32px;
+    padding: 0px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p.send-icon {
+      opacity: 0;
+      visibility: hidden;
+    }
+    p {
+      transition: opacity 0.1s ease, visibility 0.2s ease;
+    }
+    i {
+      position: absolute;
+      // color: #dedede;
+      // background-image: url('https://static-00.iconduck.com/assets.00/settings-icon-2048x2046-cw28eevx.png');
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      display: flex;
+      color: #dedede;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      transition: opacity 0.1s ease, visibility 0.2s ease;
+    }
+  }
 }
 
-.primary-button:hover {
+.primary-button__send:hover {
   background-color: $fridae-d-red;
 }
 

@@ -1,0 +1,163 @@
+@media screen and (max-width: 1000px) {
+.ai-chat {
+  visibility: hidden;
+}
+}
+
+.ai {
+  &__chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow: scroll;
+
+    &__message{
+      border-style: solid;
+      border-color: $fridae-d-red;
+      flex-grow: 1;
+      border-radius: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      margin-bottom: 16px;
+      color: $fridae-red;
+    }
+  }
+}
+
+#chat_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tags-input {
+  transition: 0.3s;
+  flex-grow: 1;
+  border: 2px solid $fridae-l-grey;
+  border-radius: 40px;
+  height: 40px;
+  padding: 0 11px;
+  font-size: 14px;
+  align-items: center;
+  overflow: hidden;
+  color: $black;
+
+  span {
+    background: $fridae-l-grey;
+    margin-right: 7px;
+    color: $white;
+    padding: 4px 7px;
+    border-radius: 20px;
+
+    &[data-selected] {
+      background: blue;
+    }
+  }
+
+  &::after {
+    content: '';
+    background: darkgray;
+    width: 1px;
+    height: 19px;
+    margin: -1px 0 0 -1px;
+    display: none;
+    animation: blink 0.5s infinite alternate;
+  }
+
+  &:focus {
+    border-color: $fridae-red;
+    outline: none;
+
+
+    &[data-cursor]::after {
+      display: block;
+
+      @media screen and (max-width: 736px) {
+        display: none;
+      }
+    }
+
+    + h1 {
+      color: $fridae-red;
+
+      span {
+        border-color: blue;
+      }
+    }
+  }
+  &:focus ~ .primary-button__send {
+    position: absolute;
+    transition: 0.2s ease-out;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border-style: none;
+    border-color: white;
+    background-color: $fridae-red;
+    color: white;
+    height: 32px;
+    padding: 0px;
+    right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i.paw-icon {
+      opacity: 0;
+      visibility: hidden;
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      // transition: 0.5s;
+      // background-image: url("https://tal7aouy.gallerycdn.vsassets.io/extensions/tal7aouy/icons/3.8.0/1703110281439/Microsoft.VisualStudio.Services.Icons.Default");
+    }
+    p.send-icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  // &:focus ~ .primary-button__send > i {
+  //   color: $fridae-red;
+  //   background-image: url('app/assets/images/icons/spider-solid.svg');
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  // }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    color: $fridae-red;
+  }
+  49% {
+    color: $fridae-red;
+    opacity: 1;
+  }
+  50% {
+    color: $fridae-red;
+    opacity: 0;
+  }
+  100% {
+    color: $fridae-red;
+    opacity: 0;
+  }
+}
+
+.input__div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:focus {
+    // background-color: black;
+  }
+}
+
+.icon-class {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../images/icons/send-message.svg');
+}

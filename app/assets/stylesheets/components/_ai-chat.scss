@@ -1,0 +1,41 @@
+.ai-chat {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    margin: 0;
+    margin-bottom: 16px;
+    color: $fridae-red;
+  }
+  &__record {
+    overflow: scroll;
+    position: absolute;
+    flex-grow: 1;
+    width: inherit;
+    padding: 16px;
+      &__message {
+        box-shadow: 0 0 8px rgba(0,0,0,0.5);
+        color: $white;
+        padding: 16px;
+        border-radius: 1rem;
+        background-color: $fridae-red;
+        width: fit-content;
+      }
+    }
+
+  &__body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.record-parent {
+  border-style: solid;
+    border-color: #A4161A;
+    border-radius: 16px;
+  position: relative;
+  flex-grow: 1;
+  overflow-y: auto; /* Scrollable if content exceeds height */
+  background-color: #f9f9f9; /* Optional: Add a background color */
+}

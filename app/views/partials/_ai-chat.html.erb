@@ -1,0 +1,20 @@
+ <%= javascript_include_tag 'ai-chat.js' %>
+<div class="ai-chat__body">
+  <div class="record-parent">
+    <div class="ai-chat__record">
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <%= form_with url: dashboards_post_path, method: :post, id: "chat_form", local: false do |form| %>
+    <%# <%= label_tag :message, "Talk to Fridae", class: 'form-label' %>
+      <div class="input__div">
+        <%= text_field_tag :message, nil, class: 'tags-input', required: true %>
+        <%= button_tag "", class: "primary-button__send" do %>
+          <i class="fa-solid fa-paw fa-fade paw-icon"></i>
+          <p class="send-icon">Send</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

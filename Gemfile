@@ -43,6 +43,12 @@ gem 'dotenv-rails'
 
 gem "bootstrap", "~> 5.2"
 
+gem "ruby-openai"
+
+gem "font-awesome-sass"
+
+gem 'httparty' # Required for http API calls to your personal AI assistant
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
